@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres
+    volumes:
+      - gelaendespiel_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=laravel
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=admin
+
+volumes:
+  gelaendespiel_data:
