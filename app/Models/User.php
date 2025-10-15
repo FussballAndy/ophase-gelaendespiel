@@ -26,7 +26,9 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
-    protected $hidden = [];
+    protected $hidden = [
+        'token'
+    ];
 
     /**
      * Get the attributes that should be cast.

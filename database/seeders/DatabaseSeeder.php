@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'station' => 0
+            'station' => 0,
+            'token' => '01234567'
         ]);
     }
 }
