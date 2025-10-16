@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create([
             'station' => 0,
-            'token' => '01234567'
+            'token' => config('auth.admin_password')
         ]);
     }
 }

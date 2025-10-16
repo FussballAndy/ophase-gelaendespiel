@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,10 +17,14 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $creds = $request->validate([
-            'token' => ['required', 'string', 'regex:/[0-9A-F]{8}/']
+            'token' => ['required', 'string']
         ]);
 
-        if(Auth::attempt($creds)) {
+        $user = User::where('token', $creds)->first();
+        
+        if($user) {
+            Auth::login($user);
+
             $request->session()->regenerate();
 
             return redirect()->intended('tutor');

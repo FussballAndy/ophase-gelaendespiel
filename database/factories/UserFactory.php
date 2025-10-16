@@ -25,7 +25,7 @@ class UserFactory extends Factory
     {
         return [
             'station' => fake()->numberBetween(0, 25),
-            'token' => fake()->regexify('[0-9A-F]{8}')
+            'token' => fake()->regexify('[0-9A-F]{8}'), // hex like token
             /*'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
