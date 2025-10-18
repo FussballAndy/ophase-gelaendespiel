@@ -24,7 +24,6 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'station' => fake()->numberBetween(0, 25),
             'token' => fake()->regexify('[0-9A-F]{8}'), // hex like token
             /*'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),

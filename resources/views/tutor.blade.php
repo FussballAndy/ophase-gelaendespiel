@@ -1,3 +1,3 @@
 <x-layout>
-    Station {{ Auth::user()->station + 1 }}
+    <span>Station {{ Auth::user()->station->name }}</span>
 </x-layout>

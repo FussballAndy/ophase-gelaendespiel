@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -38,7 +39,7 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'station' => 'integer'
+            // 'station' => 'integer'
         ];
     }
 
@@ -52,5 +53,10 @@ class User extends Authenticatable
         {
             parent::setAttribute($key, $value);
         }
+    }
+
+    public function station(): BelongsTo
+    {
+        return $this->belongsTo(Station::class);
     }
 }
