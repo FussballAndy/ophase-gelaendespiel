@@ -14,6 +14,17 @@ class LoginController extends Controller
         return view('login');
     }
 
+    public function tutorPage()
+    {
+        $station = Auth::user()->station;
+        $stationName = $station->name;
+        $rounds = $station->rounds->sortBy('time_slot');
+        return view('tutor', [
+            'stationName' => $stationName,
+            'rounds' => $rounds,
+        ]);
+    }
+
     public function login(Request $request)
     {
         $creds = $request->validate([

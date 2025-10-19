@@ -12,6 +12,4 @@ Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/tutor', function () {
-    return view('tutor');
-})->middleware('auth');
+Route::get('/tutor', [LoginController::class, 'tutorPage'])->middleware('auth')->name('tutor');

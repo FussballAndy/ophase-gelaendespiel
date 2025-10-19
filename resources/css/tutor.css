@@ -1,0 +1,17 @@
+@reference './app.css';
+
+.round-selector {
+    @apply gap-1 p-1;
+}
+
+.round-selector input {
+    @apply appearance-none outline-none;
+}
+
+.round-selector input + label {
+    @apply border border-neutral-50 p-2 flex-1 rounded transition-colors;
+}
+
+.round-selector input:checked + label {
+    @apply bg-neutral-50 text-black;
+}

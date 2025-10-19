@@ -1,5 +1,6 @@
 <?php
 
+use App\RoundWinner;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,6 +17,7 @@ return new class extends Migration
             $table->integer("group");
             $table->integer("time_slot");
             $table->foreignId("station_id")->on("stations");
+            $table->enum('winner', RoundWinner::cases());
             $table->timestamps();
         });
     }

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\RoundWinner;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,6 +19,8 @@ class GameRoundFactory extends Factory
     {
         return [
             //
+            'winner' => RoundWinner::Unset,
+            'group' => fake()->numberBetween(1, 25),
         ];
     }
 }
